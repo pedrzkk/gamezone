@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAMEZONE</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <section id="loginScreen" class="login-screen">
+
+        <div class="login-card">
+
+            <div class="logo">
+                GAME<span>ZONE</span>
+            </div>
+
+            <p class="login-subtitle">
+                Gaming & Competitive
+            </p>
+
+            <h1>
+                Bem-vindo!
+            </h1>
+
+            <p class="login-description">
+                Entre para conhecer os maiores jogos competitivos.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Usuário
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Digite seu usuário"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Digite sua senha"
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+                    ENTRAR
+                </button>
+
+                <p
+                    id="loginError"
+                    class="login-error"
+                ></p>
+
+            </form>
+
+            <div class="login-info">
+                Projeto educacional sobre jogos eletrônicos.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SITE PRINCIPAL
+    ====================================================== -->
+
+    <div id="mainSite" class="main-site hidden">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="main-header">
+
+            <div class="header-logo">
+                GAME<span>ZONE</span>
+            </div>
+
+            <nav>
+
+                <button
+                    onclick="showHome()"
+                    class="nav-button"
+                >
+                    Início
+                </button>
+
+                <button
+                    onclick="scrollToGames()"
+                    class="nav-button"
+                >
+                    Jogos
+                </button>
+
+                <button
+                    onclick="scrollToAbout()"
+                    class="nav-button"
+                >
+                    Sobre
+                </button>
+
+            </nav>
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Sair
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <main id="homePage">
+
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-tag">
+                        🎮 GAMEZONE
+                    </span>
+
+                    <h1>
+                        O universo dos
+                        <span>games</span>
+                        em um só lugar.
+                    </h1>
+
+                    <p>
+                        Descubra como os maiores jogos
+                        competitivos funcionam, seus diferenciais,
+                        skins, streamers e muito mais.
+                    </p>
+
+                    <button
+                        class="hero-button"
+                        onclick="scrollToGames()"
+                    >
+                        EXPLORAR JOGOS →
+                    </button>
+
+                </div>
+
+
+                <div class="hero-decoration">
+
+                    <div class="floating-card card-one">
+                        🎯
+                    </div>
+
+                    <div class="floating-card card-two">
+                        🎮
+                    </div>
+
+                    <div class="floating-card card-three">
+                        ⚡
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 JOGOS
+            ================================================== -->
+
+            <section
+                id="gamesSection"
+                class="games-section"
+            >
+
+                <div class="section-heading">
+
+                    <span>
+                        ESCOLHA SEU JOGO
+                    </span>
+
+                    <h2>
+                        Explore os games
+                    </h2>
+
+                    <p>
+                        Clique em um jogo para conhecer sua
+                        mecânica, características e diferenciais.
+                    </p>
+
+                </div>
+
+
+                <div class="games-grid">
+
+
+                    <!-- FORTNITE -->
+
+                    <article
+                        class="game-card fortnite-card"
+                        onclick="openGame('fortnite')"
+                    >
+
+                        <div class="game-image">
+
+                            <img
+                                src="https://cdn2.unrealengine.com/fortnite-battle-royale-1920x1080-1920x1080-9c3c4c3c3c3c.jpg"
+                                alt="Fortnite"
+                            >
+
+                            <span class="game-number">
+                                01
+                            </span>
+
+                        </div>
+
+                        <div class="game-card-content">
+
+                            <span>
+                                BATTLE ROYALE
+                            </span>
+
+                            <h3>
+                                Fortnite
+                            </h3>
+
+                            <p>
+                                Construção, combate e sobrevivência.
+                            </p>
+
+                            <strong>
+                                EXPLORAR →
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- FREE FIRE -->
+
+                    <article
+                        class="game-card freefire-card"
+                        onclick="openGame('freefire')"
+                    >
+
+                        <div class="game-image">
+
+                            <img
+                                src="https://dl.dir.freefiremobile.com/common/web_event/official2/dist/images/freefire.jpg"
+                                alt="Free Fire"
+                            >
+
+                            <span class="game-number">
+                                02
+                            </span>
+
+                        </div>
+
+                        <div class="game-card-content">
+
+                            <span>
+                                BATTLE ROYALE MOBILE
+                            </span>
+
+                            <h3>
+                                Free Fire
+                            </h3>
+
+                            <p>
+                                Partidas rápidas e combate intenso.
+                            </p>
+
+                            <strong>
+                                EXPLORAR →
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CS2 -->
+
+                    <article
+                        class="game-card cs2-card"
+                        onclick="openGame('cs2')"
+                    >
+
+                        <div class="game-image">
+
+                            <img
+                                src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg"
+                                alt="Counter-Strike 2"
+                            >
+
+                            <span class="game-number">
+                                03
+                            </span>
+
+                        </div>
+
+                        <div class="game-card-content">
+
+                            <span>
+                                FPS COMPETITIVO
+                            </span>
+
+                            <h3>
+                                Counter-Strike 2
+                            </h3>
+
+                            <p>
+                                Estratégia, precisão e trabalho em equipe.
+                            </p>
+
+                            <strong>
+                                EXPLORAR →
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- VALORANT -->
+
+                    <article
+                        class="game-card valorant-card"
+                        onclick="openGame('valorant')"
+                    >
+
+                        <div class="game-image">
+
+                            <img
+                                src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt8b5f1c8c8c8c8c8/valorant.jpg"
+                                alt="Valorant"
+                            >
+
+                            <span class="game-number">
+                                04
+                            </span>
+
+                        </div>
+
+                        <div class="game-card-content">
+
+                            <span>
+                                FPS TÁTICO
+                            </span>
+
+                            <h3>
+                                Valorant
+                            </h3>
+
+                            <p>
+                                Agentes, habilidades e estratégia.
+                            </p>
+
+                            <strong>
+                                EXPLORAR →
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SOBRE
+            ================================================== -->
+
+            <section
+                id="aboutSection"
+                class="about-section"
+            >
+
+                <div>
+
+                    <span>
+                        SOBRE O PROJETO
+                    </span>
+
+                    <h2>
+                        GAMEZONE
+                    </h2>
+
+                </div>
+
+                <p>
+                    O GameZone é um projeto educacional criado
+                    para apresentar informações sobre jogos
+                    eletrônicos, suas mecânicas, características,
+                    diferenciais e comunidades.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- =================================================
+             PÁGINA DO JOGO
+        ================================================== -->
+
+        <section
+            id="gamePage"
+            class="game-page hidden"
+        >
+
+            <!-- BOTÃO MENU -->
+
+            <button
+                id="toggleGameMenu"
+                class="toggle-game-menu"
+                onclick="toggleGameMenu()"
+            >
+                ☰
+            </button>
+
+
+            <!-- MENU LATERAL -->
+
+            <aside class="game-sidebar">
+
+                <div class="sidebar-logo">
+                    GAME<span>ZONE</span>
+                </div>
+
+                <div class="sidebar-title">
+                    MENU DO JOGO
+                </div>
+
+
+                <button
+                    class="game-menu-button active"
+                    onclick="showGameSection('meta')"
+                >
+                    <span class="menu-icon">
+                        🎯
+                    </span>
+
+                    <span>
+                        Meta / Skins
+                    </span>
+                </button>
+
+
+                <button
+                    class="game-menu-button"
+                    onclick="showGameSection('streamers')"
+                >
+                    <span class="menu-icon">
+                        🎥
+                    </span>
+
+                    <span>
+                        Streamers
+                    </span>
+                </button>
+
+
+                <button
+                    class="game-menu-button"
+                    onclick="openGameLauncher()"
+                >
+                    <span class="menu-icon">
+                        🚀
+                    </span>
+
+                    <span id="launcherName">
+                        Launcher
+                    </span>
+                </button>
+
+
+                <div class="sidebar-line"></div>
+
+
+                <button
+                    class="game-menu-button back"
+                    onclick="closeGame()"
+                >
+                    <span class="menu-icon">
+                        ←
+                    </span>
+
+                    <span>
+                        Voltar aos jogos
+                    </span>
+                </button>
+
+            </aside>
+
+
+            <!-- FUNDO -->
+
+            <div
+                id="gameBackground"
+                class="game-page-background"
+            ></div>
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="game-page-content">
+
+
+                <button
+                    class="old-back-button"
+                    onclick="closeGame()"
+                >
+                    ← VOLTAR
+                </button>
+
+
+                <div class="game-page-header">
+
+                    <span id="gameCategory">
+                        BATTLE ROYALE
+                    </span>
+
+                    <h1 id="gameTitle">
+                        Fortnite
+                    </h1>
+
+                    <p id="gameDescription">
+                        Construção, combate e sobrevivência.
+                    </p>
+
+                </div>
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="game-info-grid">
+
+
+                    <div class="info-box">
+
+                        <span>
+                            COMO FUNCIONA
+                        </span>
+
+                        <h2>
+                            Mecânica
+                        </h2>
+
+                        <p id="gameHow">
+                            Fortnite combina combate,
+                            exploração e construção.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span>
+                            DIFERENCIAL
+                        </span>
+
+                        <h2>
+                            O que torna especial?
+                        </h2>
+
+                        <p id="gameDifference">
+                            A possibilidade de construir
+                            estruturas durante o combate.
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span>
+                            OBJETIVO
+                        </span>
+
+                        <h2>
+                            Seu objetivo
+                        </h2>
+
+                        <p id="gameObjective">
+                            Ser o último jogador ou equipe
+                            sobrevivente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTEÚDO DO MENU -->
+
+                <div id="gameExtraContent">
+
+                    <div class="extra-content">
+
+                        <span class="extra-label">
+                            CONTEÚDO DO JOGO
+                        </span>
+
+                        <h2>
+                            Meta / Skins
+                        </h2>
+
+                        <p>
+                            Confira informações sobre a
+                            meta e as skins do jogo.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            <div class="footer-logo">
+                GAME<span>ZONE</span>
+            </div>
+
+            <p>
+                Projeto educacional sobre jogos eletrônicos.
+            </p>
+
+            <p>
+                © 2026 GameZone
+            </p>
+
+            <p class="authors">
+                Direitos autorais © 2026
+                <strong>
+                    Iago e Pedro Marcelo
+                </strong>
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           LOGIN
+        ================================================= */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginScreen =
+            document.getElementById("loginScreen");
+
+        const mainSite =
+            document.getElementById("mainSite");
+
+        const loginError =
+            document.getElementById("loginError");
+
+
+        loginForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const username =
+                    document.getElementById("username").value;
+
+                const password =
+                    document.getElementById("password").value;
+
+
+                if (
+                    username === "admin" &&
+                    password === "123456"
+                ) {
+
+                    loginScreen.classList.add("hidden");
+
+                    mainSite.classList.remove("hidden");
+
+                } else {
+
+                    loginError.textContent =
+                        "Usuário ou senha incorretos.";
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           DADOS DOS JOGOS
+        ================================================= */
+
+        const games = {
+
+            fortnite: {
+
+                title: "Fortnite",
+
+                category: "BATTLE ROYALE",
+
+                description:
+                    "Construção, combate e sobrevivência.",
+
+                how:
+                    "Os jogadores caem no mapa, coletam recursos, armas e equipamentos enquanto tentam sobreviver até o final.",
+
+                difference:
+                    "A construção durante o combate é uma das principais características do jogo.",
+
+                objective:
+                    "Ser o último jogador ou equipe sobrevivente.",
+
+                launcher:
+                    "Epic Games",
+
+                launcherUrl:
+                    "https://store.epicgames.com/pt-BR/all-experiences/fortnite",
+
+                streamer:
+                    "Ninja",
+
+                streamerUrl:
+                    "https://www.youtube.com/@Ninja"
+
+            },
+
+
+            freefire: {
+
+                title: "Free Fire",
+
+                category: "BATTLE ROYALE MOBILE",
+
+                description:
+                    "Partidas rápidas e combate intenso.",
+
+                how:
+                    "Jogadores entram em uma ilha, procuram armas e equipamentos e enfrentam outros jogadores até restar apenas um.",
+
+                difference:
+                    "Partidas rápidas, personagens com habilidades e otimização para dispositivos móveis.",
+
+                objective:
+                    "Sobreviver e alcançar a vitória eliminando os adversários.",
+
+                launcher:
+                    "Garena",
+
+                launcherUrl:
+                    "https://ff.garena.com/pt/",
+
+                streamer:
+                    "Nobru",
+
+                streamerUrl:
+                    "https://www.youtube.com/@Nobru"
+
+            },
+
+
+            cs2: {
+
+                title: "Counter-Strike 2",
+
+                category: "FPS COMPETITIVO",
+
+                description:
+                    "Estratégia, precisão e trabalho em equipe.",
+
+                how:
+                    "Duas equipes disputam objetivos em rodadas, utilizando armas e estratégias para superar os adversários.",
+
+                difference:
+                    "Economia de armas, precisão, mapas competitivos e forte foco em estratégia.",
+
+                objective:
+                    "Completar o objetivo da rodada ou eliminar a equipe adversária.",
+
+                launcher:
+                    "Steam",
+
+                launcherUrl:
+                    "https://store.steampowered.com/app/730/CounterStrike_2/",
+
+                streamer:
+                    "Gaules",
+
+                streamerUrl:
+                    "https://www.youtube.com/@Gaules"
+
+            },
+
+
+            valorant: {
+
+                title: "Valorant",
+
+                category: "FPS TÁTICO",
+
+                description:
+                    "Agentes, habilidades e estratégia.",
+
+                how:
+                    "Duas equipes se enfrentam em rodadas utilizando armas e habilidades exclusivas dos agentes.",
+
+                difference:
+                    "Mistura de tiro tático com habilidades únicas dos personagens.",
+
+                objective:
+                    "Vencer as rodadas completando o objetivo ou eliminando a equipe adversária.",
+
+                launcher:
+                    "Riot Games",
+
+                launcherUrl:
+                    "https://playvalorant.com/pt-br/download/",
+
+                streamer:
+                    "tarik",
+
+                streamerUrl:
+                    "https://www.youtube.com/@tarik"
+
+            }
+
+        };
+
+
+        let currentGame = "";
+
+
+        /* =================================================
+           ABRIR JOGO
+        ================================================= */
+
+        function openGame(game) {
+
+            const data =
+                games[game];
+
+            if (!data) {
+                return;
+            }
+
+            currentGame = game;
+
+
+            document
+                .getElementById("homePage")
+                .classList.add("hidden");
+
+
+            document
+                .getElementById("gamePage")
+                .classList.remove("hidden");
+
+
+            document
+                .querySelector("footer")
+                .classList.add("hidden");
+
+
+            document
+                .getElementById("gameTitle")
+                .textContent =
+                data.title;
+
+
+            document
+                .getElementById("gameCategory")
+                .textContent =
+                data.category;
+
+
+            document
+                .getElementById("gameDescription")
+                .textContent =
+                data.description;
+
+
+            document
+                .getElementById("gameHow")
+                .textContent =
+                data.how;
+
+
+            document
+                .getElementById("gameDifference")
+                .textContent =
+                data.difference;
+
+
+            document
+                .getElementById("gameObjective")
+                .textContent =
+                data.objective;
+
+
+            document
+                .getElementById("launcherName")
+                .textContent =
+                data.launcher;
+
+
+            document
+                .getElementById("gamePage")
+                .className =
+                "game-page " + game;
+
+
+            showGameSection("meta");
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* =================================================
+           FECHAR JOGO
+        ================================================= */
+
+        function closeGame() {
+
+            document
+                .getElementById("gamePage")
+                .classList.add("hidden");
+
+
+            document
+                .getElementById("homePage")
+                .classList.remove("hidden");
+
+
+            document
+                .querySelector("footer")
+                .classList.remove("hidden");
+
+
+            currentGame = "";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* =================================================
+           ABRIR / FECHAR MENU
+        ================================================= */
+
+        function toggleGameMenu() {
+
+            const gamePage =
+                document.getElementById("gamePage");
+
+            const button =
+                document.getElementById("toggleGameMenu");
+
+
+            gamePage.classList.toggle(
+                "menu-closed"
+            );
+
+
+            if (
+                gamePage.classList.contains(
+                    "menu-closed"
+                )
+            ) {
+
+                button.textContent = "☰";
+
+            } else {
+
+                button.textContent = "✕";
+
+            }
+
+        }
+
+
+        /* =================================================
+           MENU META / STREAMERS
+        ================================================= */
+
+        function showGameSection(section) {
+
+            const buttons =
+                document.querySelectorAll(
+                    ".game-menu-button"
+                );
+
+
+            buttons.forEach(
+                button => {
+                    button.classList.remove("active");
+                }
+            );
+
+
+            if (section === "meta") {
+
+                buttons[0]
+                    .classList
+                    .add("active");
+
+
+                document
+                    .getElementById(
+                        "gameExtraContent"
+                    )
+                    .innerHTML = `
+
+                        <div class="extra-content">
+
+                            <span class="extra-label">
+                                CONTEÚDO DO JOGO
+                            </span>
+
+                            <h2>
+                                🎯 Meta / Skins
+                            </h2>
+
+                            <p>
+                                Conheça as principais características
+                                da meta e o sistema de skins de
+                                <strong>${games[currentGame].title}</strong>.
+                            </p>
+
+                            <div class="mini-feature-grid">
+
+                                <div>
+                                    🎮
+                                    <strong>
+                                        Gameplay
+                                    </strong>
+                                    <span>
+                                        Mecânicas principais
+                                    </span>
+                                </div>
+
+                                <div>
+                                    ✨
+                                    <strong>
+                                        Skins
+                                    </strong>
+                                    <span>
+                                        Personalização
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+            }
+
+
+            if (section === "streamers") {
+
+                buttons[1]
+                    .classList
+                    .add("active");
+
+
+                const data =
+                    games[currentGame];
+
+
+                document
+                    .getElementById(
+                        "gameExtraContent"
+                    )
+                    .innerHTML = `
+
+                        <div class="extra-content">
+
+                            <span class="extra-label">
+                                COMUNIDADE
+                            </span>
+
+                            <h2>
+                                🎥 Streamer em destaque
+                            </h2>
+
+                            <p>
+                                Confira um dos grandes nomes
+                                relacionados ao jogo.
+                            </p>
+
+                            <div class="streamer-card">
+
+                                <div class="streamer-avatar">
+                                    🎥
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        ${data.streamer}
+                                    </strong>
+
+                                    <span>
+                                        Criador de conteúdo
+                                    </span>
+                                </div>
+
+                                <a
+                                    href="${data.streamerUrl}"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    VISITAR CANAL →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+            }
+
+        }
+
+
+        /* =================================================
+           LAUNCHER
+        ================================================= */
+
+        function openGameLauncher() {
+
+            if (!currentGame) {
+                return;
+            }
+
+
+            const data =
+                games[currentGame];
+
+
+            window.open(
+                data.launcherUrl,
+                "_blank"
+            );
+
+        }
+
+
+        /* =================================================
+           NAVEGAÇÃO
+        ================================================= */
+
+        function scrollToGames() {
+
+            document
+                .getElementById("gamesSection")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        function scrollToAbout() {
+
+            document
+                .getElementById("aboutSection")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        function showHome() {
+
+            closeGame();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* =================================================
+           LOGOUT
+        ================================================= */
+
+        function logout() {
+
+            mainSite
+                .classList
+                .add("hidden");
+
+            loginScreen
+                .classList
+                .remove("hidden");
+
+            document
+                .getElementById("loginForm")
+                .reset();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

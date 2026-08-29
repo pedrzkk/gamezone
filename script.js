@@ -1,182 +1,209 @@
-/* =========================================
-   GAMEZONE - SCRIPT PRINCIPAL
-========================================= */
+/* =========================================================
+   GAMEZONE - SCRIPT.JS
+   ========================================================= */
 
 
-/* =========================================
-   DADOS DOS JOGOS
-========================================= */
-
-const games = {
-
-    fortnite: {
-        title: "FORTNITE",
-        category: "BATTLE ROYALE",
-
-        description:
-            "Fortnite combina combate, sobrevivência e construção em partidas dinâmicas. Os jogadores precisam coletar recursos, encontrar equipamentos e permanecer dentro da área segura.",
-
-        how:
-            "Os jogadores entram em um mapa, procuram armas e recursos e enfrentam outros participantes. A área jogável diminui progressivamente, fazendo com que os jogadores se encontrem.",
-
-        difference:
-            "Seu grande diferencial é a construção. Durante as partidas, o jogador pode criar paredes, rampas e estruturas para atacar ou se defender.",
-
-        objective:
-            "Ser o último jogador ou equipe sobrevivente.",
-
-        color: "#55c9ff",
-
-        features: [
-            "Battle Royale",
-            "Construção",
-            "Grande mapa",
-            "Eventos especiais",
-            "Personalização de personagens",
-            "Jogo em equipe",
-            "Temporadas",
-            "Atualizações frequentes"
-        ]
-    },
-
-
-    freefire: {
-        title: "FREE FIRE",
-        category: "BATTLE ROYALE MOBILE",
-
-        description:
-            "Free Fire é um Battle Royale desenvolvido pensando em partidas rápidas e acessibilidade, principalmente em dispositivos móveis.",
-
-        how:
-            "Os jogadores entram em uma ilha e procuram armas e equipamentos enquanto a área segura diminui. É preciso sobreviver até o final.",
-
-        difference:
-            "Um dos principais diferenciais é o ritmo rápido das partidas e a possibilidade de rodar em uma grande variedade de dispositivos móveis.",
-
-        objective:
-            "Sobreviver aos adversários e alcançar a vitória sendo o último jogador ou equipe restante.",
-
-        color: "#ff8b2d",
-
-        features: [
-            "Partidas rápidas",
-            "Battle Royale",
-            "Personagens",
-            "Habilidades especiais",
-            "Personalização",
-            "Veículos",
-            "Jogo em equipe",
-            "Dispositivos móveis"
-        ]
-    },
-
-
-    cs2: {
-        title: "COUNTER-STRIKE 2",
-        category: "FPS COMPETITIVO",
-
-        description:
-            "Counter-Strike 2 é um FPS competitivo baseado em confrontos entre equipes, estratégia, precisão e gerenciamento de recursos.",
-
-        how:
-            "Duas equipes se enfrentam em diferentes objetivos. Terroristas e Contra-Terroristas possuem funções diferentes e precisam trabalhar em equipe para vencer as rodadas.",
-
-        difference:
-            "Seu diferencial está na combinação entre mira, estratégia, economia, posicionamento e comunicação entre os jogadores.",
-
-        objective:
-            "Vencer as rodadas cumprindo o objetivo da equipe ou eliminando os adversários.",
-
-        color: "#e8a23a",
-
-        features: [
-            "FPS competitivo",
-            "Economia",
-            "Rodadas",
-            "Armas",
-            "Estratégia",
-            "Mapas competitivos",
-            "Comunicação",
-            "Precisão"
-        ]
-    },
-
-
-    valorant: {
-        title: "VALORANT",
-        category: "FPS TÁTICO",
-
-        description:
-            "Valorant mistura o tradicional FPS tático com personagens que possuem habilidades únicas, criando diferentes possibilidades estratégicas.",
-
-        how:
-            "Duas equipes se enfrentam. Uma equipe tenta plantar o dispositivo enquanto a outra tenta impedir ou desarmá-lo.",
-
-        difference:
-            "A principal diferença está na combinação entre tiro preciso e habilidades dos agentes, criando estratégias que vão além da mira.",
-
-        objective:
-            "Vencer as rodadas eliminando a equipe adversária ou cumprindo o objetivo da partida.",
-
-        color: "#ff4655",
-
-        features: [
-            "FPS tático",
-            "Agentes",
-            "Habilidades",
-            "Rodadas",
-            "Estratégia",
-            "Mapas competitivos",
-            "Economia",
-            "Jogo em equipe"
-        ]
-    }
-
-};
-
-
-/* =========================================
+/* =========================================================
    LOGIN FIXO
-========================================= */
+   ========================================================= */
 
 const usuarioCorreto = "admin";
 const senhaCorreta = "123456";
 
 
-/* =========================================
+/* =========================================================
    PEGAR ELEMENTOS DO HTML
-========================================= */
+   ========================================================= */
 
 const loginScreen = document.getElementById("loginScreen");
-
 const mainSite = document.getElementById("mainSite");
 
 const loginForm = document.getElementById("loginForm");
 
 const homePage = document.getElementById("homePage");
-
 const gamePage = document.getElementById("gamePage");
 
-const streamersPage = document.getElementById("streamersPage");
-
 const gameTitle = document.getElementById("gameTitle");
-
 const gameCategory = document.getElementById("gameCategory");
 
 const gameDescription = document.getElementById("gameDescription");
-
 const gameHow = document.getElementById("gameHow");
-
 const gameDifference = document.getElementById("gameDifference");
-
 const gameObjective = document.getElementById("gameObjective");
-
 const gameFeatures = document.getElementById("gameFeatures");
 
 
-/* =========================================
-   VERIFICAR SE O LOGIN EXISTE
-========================================= */
+/* =========================================================
+   DADOS DOS JOGOS
+   ========================================================= */
+
+const jogos = {
+
+    fortnite: {
+        nome: "Fortnite",
+        categoria: "Battle Royale",
+
+        descricao:
+            "Fortnite é um jogo de batalha online que mistura combate, construção e muita criatividade.",
+
+        comoFunciona:
+            "Os jogadores entram em um mapa, coletam armas e recursos e enfrentam outros jogadores até restar apenas um vencedor.",
+
+        diferencial:
+            "Seu grande diferencial é o sistema de construção, além dos eventos, colaborações e mudanças constantes no mapa.",
+
+        objetivo:
+            "Ser o último jogador ou equipe sobrevivente.",
+
+        recursos: [
+            "Construção",
+            "Battle Royale",
+            "Eventos especiais",
+            "Personalização de personagens",
+            "Armas variadas"
+        ],
+
+        tema: "fortnite",
+
+        streamer:
+            "https://www.youtube.com/@TypicalGamer",
+
+        launcher:
+            "https://store.epicgames.com/pt-BR/p/fortnite",
+
+        skins:
+            "https://www.fortnite.com/item-shop",
+
+        capa:
+            "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+    },
+
+
+    freefire: {
+        nome: "Free Fire",
+        categoria: "Battle Royale Mobile",
+
+        descricao:
+            "Free Fire é um Battle Royale desenvolvido para dispositivos móveis, com partidas rápidas e acessíveis.",
+
+        comoFunciona:
+            "Os jogadores caem em uma ilha, procuram armas e equipamentos e lutam para sobreviver enquanto a área segura diminui.",
+
+        diferencial:
+            "Seu principal diferencial são as partidas rápidas, personagens com habilidades e otimização para celulares.",
+
+        objetivo:
+            "Sobreviver até ser o último jogador ou equipe.",
+
+        recursos: [
+            "Partidas rápidas",
+            "Personagens",
+            "Habilidades especiais",
+            "Skins",
+            "Battle Royale"
+        ],
+
+        tema: "freefire",
+
+        streamer:
+            "https://www.youtube.com/@Nobru",
+
+        launcher:
+            "https://ff.garena.com/",
+
+        skins:
+            "https://ff.garena.com/en/",
+
+        capa:
+            "https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=1200&q=80"
+    },
+
+
+    cs2: {
+        nome: "Counter-Strike 2",
+        categoria: "FPS Competitivo",
+
+        descricao:
+            "Counter-Strike 2 é um FPS competitivo baseado em equipes, estratégia, precisão e comunicação.",
+
+        comoFunciona:
+            "Duas equipes se enfrentam em diferentes objetivos. Terroristas e contra-terroristas precisam cumprir seus objetivos para vencer as rodadas.",
+
+        diferencial:
+            "O jogo se destaca pelo alto nível competitivo, precisão das armas, economia e estratégia em equipe.",
+
+        objetivo:
+            "Vencer rodadas cumprindo os objetivos ou eliminando a equipe adversária.",
+
+        recursos: [
+            "FPS competitivo",
+            "Sistema econômico",
+            "Mapas estratégicos",
+            "Armas",
+            "Modo competitivo"
+        ],
+
+        tema: "cs2",
+
+        streamer:
+            "https://www.youtube.com/@Gaules",
+
+        launcher:
+            "https://store.steampowered.com/app/730/CounterStrike_2/",
+
+        skins:
+            "https://steamcommunity.com/market/",
+
+        capa:
+            "https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=1200&q=80"
+    },
+
+
+    valorant: {
+        nome: "Valorant",
+        categoria: "FPS Tático",
+
+        descricao:
+            "Valorant é um FPS tático da Riot Games que mistura armas tradicionais com habilidades de agentes.",
+
+        comoFunciona:
+            "Duas equipes de cinco jogadores se enfrentam em rodadas. Cada agente possui habilidades próprias que podem mudar o resultado do confronto.",
+
+        diferencial:
+            "O grande diferencial é a combinação entre tiro preciso e habilidades únicas dos agentes.",
+
+        objetivo:
+            "Vencer as rodadas eliminando a equipe adversária ou cumprindo o objetivo do mapa.",
+
+        recursos: [
+            "Agentes",
+            "Habilidades",
+            "FPS tático",
+            "Mapas competitivos",
+            "Sistema de rodadas"
+        ],
+
+        tema: "valorant",
+
+        streamer:
+            "https://www.youtube.com/@Sacy",
+
+        launcher:
+            "https://playvalorant.com/pt-br/",
+
+        skins:
+            "https://playvalorant.com/pt-br/",
+
+        capa:
+            "https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=80"
+    }
+
+};
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
 
 if (loginForm) {
 
@@ -184,55 +211,36 @@ if (loginForm) {
 
         event.preventDefault();
 
-        const usernameInput =
+        const usuarioInput =
             document.getElementById("username");
 
-        const passwordInput =
+        const senhaInput =
             document.getElementById("password");
 
-        const username =
-            usernameInput.value.trim();
+        const usuario =
+            usuarioInput ? usuarioInput.value.trim() : "";
 
-        const password =
-            passwordInput.value.trim();
+        const senha =
+            senhaInput ? senhaInput.value.trim() : "";
 
-
-        /* VERIFICA USUARIO E SENHA */
 
         if (
-            username === usuarioCorreto &&
-            password === senhaCorreta
+            usuario === usuarioCorreto &&
+            senha === senhaCorreta
         ) {
 
-            /* Esconde o login */
+            if (loginScreen) {
+                loginScreen.classList.add("hidden");
+            }
 
-            loginScreen.classList.add("hidden");
-
-            /* Mostra o site */
-
-            mainSite.classList.remove("hidden");
-
-            /* Garante que a Home apareça */
-
-            homePage.classList.remove("hidden");
-
-            gamePage.classList.add("hidden");
-
-            /* Volta para o topo */
-
-            window.scrollTo({
-                top: 0,
-                behavior: "auto"
-            });
+            if (mainSite) {
+                mainSite.classList.remove("hidden");
+            }
 
         } else {
 
             alert("Usuário ou senha incorretos!");
 
-            passwordInput.value = "";
-
-            passwordInput.focus();
-
         }
 
     });
@@ -240,338 +248,417 @@ if (loginForm) {
 }
 
 
-/* =========================================
+/* =========================================================
    ABRIR PÁGINA DO JOGO
-========================================= */
+   ========================================================= */
 
-function openGame(gameName) {
+function openGame(jogo) {
 
-    const game = games[gameName];
+    const dados = jogos[jogo];
 
-
-    /* Verifica se o jogo existe */
-
-    if (!game) {
-
-        console.error(
-            "Jogo não encontrado:",
-            gameName
-        );
-
+    if (!dados) {
+        console.error("Jogo não encontrado:", jogo);
         return;
     }
 
 
-    /* =====================================
-       COLOCAR INFORMAÇÕES NA PÁGINA
-    ===================================== */
+    /* TÍTULOS */
 
-    gameTitle.textContent = game.title;
+    if (gameTitle) {
+        gameTitle.textContent = dados.nome;
+    }
 
-    gameCategory.textContent = game.category;
-
-    gameDescription.textContent =
-        game.description;
-
-    gameHow.textContent =
-        game.how;
-
-    gameDifference.textContent =
-        game.difference;
-
-    gameObjective.textContent =
-        game.objective;
+    if (gameCategory) {
+        gameCategory.textContent = dados.categoria;
+    }
 
 
-    /* =====================================
-       MUDAR A COR DO SITE
-    ===================================== */
+    /* TEXTOS */
 
-    document.documentElement.style.setProperty(
-        "--game-color",
-        game.color
+    if (gameDescription) {
+        gameDescription.textContent = dados.descricao;
+    }
+
+    if (gameHow) {
+        gameHow.textContent = dados.comoFunciona;
+    }
+
+    if (gameDifference) {
+        gameDifference.textContent = dados.diferencial;
+    }
+
+    if (gameObjective) {
+        gameObjective.textContent = dados.objetivo;
+    }
+
+
+    /* RECURSOS */
+
+    if (gameFeatures) {
+
+        gameFeatures.innerHTML = "";
+
+        dados.recursos.forEach(function(recurso) {
+
+            const item = document.createElement("li");
+
+            item.textContent = recurso;
+
+            gameFeatures.appendChild(item);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       TEMA DO JOGO
+       ===================================================== */
+
+    document.body.classList.remove(
+        "theme-fortnite",
+        "theme-freefire",
+        "theme-cs2",
+        "theme-valorant"
+    );
+
+    document.body.classList.add(
+        "theme-" + dados.tema
     );
 
 
-    /* =====================================
-       CRIAR CARACTERÍSTICAS
-    ===================================== */
+    /* =====================================================
+       IMAGEM DE FUNDO
+       ===================================================== */
 
-    gameFeatures.innerHTML = "";
+    const background =
+        document.querySelector(".game-page-background");
 
+    if (background) {
 
-    game.features.forEach(function(feature) {
+        background.style.backgroundImage =
+            "url('" + dados.capa + "')";
 
-        const featureElement =
-            document.createElement("div");
-
-        featureElement.classList.add("feature");
-
-        featureElement.textContent = feature;
-
-        gameFeatures.appendChild(
-            featureElement
-        );
-
-    });
+    }
 
 
-    /* =====================================
-       TROCAR HOME PELA PÁGINA DO JOGO
-    ===================================== */
+    /* =====================================================
+       LINKS DO MENU LATERAL
+       ===================================================== */
 
-    homePage.classList.add("hidden");
+    const streamerButton =
+        document.getElementById("streamerButton");
 
-    gamePage.classList.remove("hidden");
+    const launcherButton =
+        document.getElementById("launcherButton");
 
-
-    /* =====================================
-       REINICIAR ANIMAÇÃO
-    ===================================== */
-
-    gamePage.classList.remove(
-        "page-transition"
-    );
-
-    void gamePage.offsetWidth;
-
-    gamePage.classList.add(
-        "page-transition"
-    );
+    const skinsButton =
+        document.getElementById("skinsButton");
 
 
-    /* =====================================
-       VOLTAR PARA O TOPO
-    ===================================== */
+    if (streamerButton) {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+        streamerButton.onclick = function() {
+
+            window.open(
+                dados.streamer,
+                "_blank"
+            );
+
+        };
+
+    }
+
+
+    if (launcherButton) {
+
+        launcherButton.onclick = function() {
+
+            window.open(
+                dados.launcher,
+                "_blank"
+            );
+
+        };
+
+    }
+
+
+    if (skinsButton) {
+
+        skinsButton.onclick = function() {
+
+            window.open(
+                dados.skins,
+                "_blank"
+            );
+
+        };
+
+    }
+
+
+    /* =====================================================
+       ABRIR PÁGINA
+       ===================================================== */
+
+    if (homePage) {
+        homePage.classList.add("hidden");
+    }
+
+    if (gamePage) {
+
+        gamePage.classList.remove("hidden");
+
+        gamePage.classList.remove("game-animation");
+
+        void gamePage.offsetWidth;
+
+        gamePage.classList.add("game-animation");
+
+    }
+
+
+    /* Fecha o menu lateral ao entrar */
+
+    const sideMenu =
+        document.getElementById("gameSideMenu");
+
+    if (sideMenu) {
+        sideMenu.classList.remove("open");
+    }
 
 }
 
 
-/* =========================================
-   FECHAR PÁGINA DO JOGO
-========================================= */
+/* =========================================================
+   VOLTAR PARA HOME
+   ========================================================= */
 
 function closeGame() {
 
-    gamePage.classList.add("hidden");
-
-    homePage.classList.remove("hidden");
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* =========================================
-   BOTÃO INÍCIO
-========================================= */
-
-function showHome() {
-
-    gamePage.classList.add("hidden");
-
-    homePage.classList.remove("hidden");
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* =========================================
-   IR PARA OS JOGOS
-========================================= */
-
-function scrollToGames() {
-
-    gamePage.classList.add("hidden");
-
-    homePage.classList.remove("hidden");
-
-
-    setTimeout(function() {
-
-        const gamesSection =
-            document.getElementById(
-                "gamesSection"
-            );
-
-        if (gamesSection) {
-
-            gamesSection.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    }, 100);
-
-}
-
-
-/* =========================================
-   IR PARA SOBRE
-========================================= */
-
-function showAbout() {
-
-    gamePage.classList.add("hidden");
-
-    homePage.classList.remove("hidden");
-
-
-    setTimeout(function() {
-
-        const aboutSection =
-            document.getElementById(
-                "aboutSection"
-            );
-
-        if (aboutSection) {
-
-            aboutSection.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    }, 100);
-
-}
-
-
-/* =========================================
-   SAIR DA CONTA
-========================================= */
-
-function logout() {
-
-    /* Esconde o site */
-
-    mainSite.classList.add("hidden");
-
-    /* Mostra o login */
-
-    loginScreen.classList.remove("hidden");
-
-    /* Volta para a Home */
-
-    gamePage.classList.add("hidden");
-
-    homePage.classList.remove("hidden");
-
-
-    /* Limpa os campos */
-
-    const usernameInput =
-        document.getElementById("username");
-
-    const passwordInput =
-        document.getElementById("password");
-
-
-    if (usernameInput) {
-        usernameInput.value = "";
+    if (gamePage) {
+        gamePage.classList.add("hidden");
     }
 
-    if (passwordInput) {
-        passwordInput.value = "";
+    if (homePage) {
+        homePage.classList.remove("hidden");
     }
 
 
-    /* Volta para o topo */
+    document.body.classList.remove(
+        "theme-fortnite",
+        "theme-freefire",
+        "theme-cs2",
+        "theme-valorant"
+    );
 
-    window.scrollTo({
-        top: 0,
-        behavior: "auto"
-    });
+
+    /* Fecha menu */
+
+    const sideMenu =
+        document.getElementById("gameSideMenu");
+
+    if (sideMenu) {
+        sideMenu.classList.remove("open");
+    }
 
 }
 
 
-/* =========================================
-   EFEITO 3D NOS CARDS DOS JOGOS
-========================================= */
+/* =========================================================
+   MENU LATERAL
+   ========================================================= */
 
-const gameCards =
-    document.querySelectorAll(".game-card");
+function toggleGameMenu() {
 
+    const sideMenu =
+        document.getElementById("gameSideMenu");
 
-gameCards.forEach(function(card) {
+    if (!sideMenu) {
+        console.warn("Menu lateral não encontrado.");
+        return;
+    }
 
+    sideMenu.classList.toggle("open");
 
-    /* Quando o mouse entra */
-
-    card.addEventListener(
-        "mousemove",
-        function(event) {
-
-            const rect =
-                card.getBoundingClientRect();
+}
 
 
-            const x =
-                event.clientX - rect.left;
+/* =========================================================
+   FECHAR MENU
+   ========================================================= */
 
-            const y =
-                event.clientY - rect.top;
+function closeGameMenu() {
 
+    const sideMenu =
+        document.getElementById("gameSideMenu");
 
-            const rotateX =
-                ((y / rect.height) - 0.5) * -5;
+    if (sideMenu) {
+        sideMenu.classList.remove("open");
+    }
 
-            const rotateY =
-                ((x / rect.width) - 0.5) * 5;
-
-
-            card.style.transform =
-                "perspective(800px) " +
-                "rotateX(" + rotateX + "deg) " +
-                "rotateY(" + rotateY + "deg) " +
-                "translateY(-8px)";
-
-        }
-    );
+}
 
 
-    /* Quando o mouse sai */
+/* =========================================================
+   ESC FECHA MENU
+   ========================================================= */
 
-    card.addEventListener(
-        "mouseleave",
-        function() {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-            card.style.transform = "";
+        if (event.key === "Escape") {
+
+            closeGameMenu();
 
         }
-    );
 
-});
-
-
-/* =========================================
-   MENSAGEM NO CONSOLE
-========================================= */
-
-console.log(
-    "GAMEZONE carregado com sucesso!"
+    }
 );
 
-console.log(
-    "Usuário: admin"
+
+/* =========================================================
+   FECHAR MENU CLICANDO FORA
+   ========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const sideMenu =
+            document.getElementById("gameSideMenu");
+
+        const menuButton =
+            document.getElementById("gameMenuButton");
+
+        if (!sideMenu) return;
+
+        if (
+            sideMenu.classList.contains("open") &&
+            !sideMenu.contains(event.target) &&
+            event.target !== menuButton
+        ) {
+
+            sideMenu.classList.remove("open");
+
+        }
+
+    }
 );
 
-console.log(
-    "Senha: 123456"
-);
+
+/* =========================================================
+   FUNÇÕES DOS BOTÕES DO MENU
+   ========================================================= */
+
+function openStreamer() {
+
+    const title =
+        gameTitle ? gameTitle.textContent : "";
+
+    let link = "";
+
+    if (title === "Fortnite") {
+        link = jogos.fortnite.streamer;
+    }
+
+    if (title === "Free Fire") {
+        link = jogos.freefire.streamer;
+    }
+
+    if (title === "Counter-Strike 2") {
+        link = jogos.cs2.streamer;
+    }
+
+    if (title === "Valorant") {
+        link = jogos.valorant.streamer;
+    }
+
+    if (link) {
+        window.open(link, "_blank");
+    }
+
+}
+
+
+function openLauncher() {
+
+    const title =
+        gameTitle ? gameTitle.textContent : "";
+
+    let link = "";
+
+    if (title === "Fortnite") {
+        link = jogos.fortnite.launcher;
+    }
+
+    if (title === "Free Fire") {
+        link = jogos.freefire.launcher;
+    }
+
+    if (title === "Counter-Strike 2") {
+        link = jogos.cs2.launcher;
+    }
+
+    if (title === "Valorant") {
+        link = jogos.valorant.launcher;
+    }
+
+    if (link) {
+        window.open(link, "_blank");
+    }
+
+}
+
+
+function openSkins() {
+
+    const title =
+        gameTitle ? gameTitle.textContent : "";
+
+    let link = "";
+
+    if (title === "Fortnite") {
+        link = jogos.fortnite.skins;
+    }
+
+    if (title === "Free Fire") {
+        link = jogos.freefire.skins;
+    }
+
+    if (title === "Counter-Strike 2") {
+        link = jogos.cs2.skins;
+    }
+
+    if (title === "Valorant") {
+        link = jogos.valorant.skins;
+    }
+
+    if (link) {
+        window.open(link, "_blank");
+    }
+
+}
+
+
+/* =========================================================
+   GARANTIR QUE AS FUNÇÕES FIQUEM DISPONÍVEIS NO HTML
+   ========================================================= */
+
+window.openGame = openGame;
+window.closeGame = closeGame;
+window.toggleGameMenu = toggleGameMenu;
+window.closeGameMenu = closeGameMenu;
+
+window.openStreamer = openStreamer;
+window.openLauncher = openLauncher;
+window.openSkins = openSkins;
+
+
+/* =========================================================
+   FINAL
+   ========================================================= */
+
+console.log("GameZone carregado com sucesso!");
