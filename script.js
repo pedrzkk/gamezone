@@ -661,4 +661,11 @@ window.openSkins = openSkins;
    FINAL
    ========================================================= */
 
-console.log("GameZone carregado com sucesso!");
+console.log("GameZone carregado com sucesso!")
+
+function abrirMeta() {
+    window.location.href = "meta.html";
+}
+
+function abrirSkins() {
+    window.location.href = "skins.html";}
